@@ -121,6 +121,7 @@ int main()
         break;
     case 4:
         printf("Exit");
+        break;
     default:
         printf("Wrong Choice");
         goto restart;
