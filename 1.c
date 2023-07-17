@@ -5,7 +5,7 @@ void insert(int arr[])
     int index;
     printf("\nEnter index value: ");
     scanf("%d",&index);
-    for (int i = 4; i >= index-1; i--)
+    for (int i = 4; i >= index; i--)
     {
         arr[i+1]=arr[i];
     }
