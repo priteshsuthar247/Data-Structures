@@ -41,23 +41,14 @@ void peep()
 }
 void change ()
 {
-    int index;
     if (top==-1)
     {
         printf("Stack is empty.\n");
     }
     else
     {
-        re:
-        printf("Enter index value: ");
-        scanf("%d",&index);
-        if (index==-1 || index>top)
-        {
-            printf("\nError.\n");
-            goto re;
-        }
-        printf("Enter new value for index %d: ",index);
-        scanf("%d",&stack[index]);
+        printf("Enter new value for %d: ",top);
+        scanf("%d",&stack[top]);
     }
 }
 void display()
