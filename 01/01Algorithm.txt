@@ -1,0 +1,98 @@
+Step 1.	Initialize global variable top as 0
+Step 2.	Function insert(arr[])
+Step 3.	Initialize integer index
+Step 4.	If top is equal to 10
+        i.	Print "Array Overflow"
+        ii.	Return top
+Step 5.	End If
+Step 6.	Label re:
+Step 7.	Print "Enter index value: "
+Step 8.	Read index
+Step 9.	If top is less than index
+        i.	Print "Enter a value >= top"
+        ii.	Go to label re
+Step 10.	Else
+            i.	For i from top-1 down to index
+            ii.	Set arr[i+1] to arr[i]
+            iii.	End For
+Step 11.	End If
+Step 12.	Print "Enter new value for index index: "
+Step 13.	Read arr[index]
+Step 14.	Increment top by 1
+Step 15.	Return top
+Step 16.	End Function
+
+Step 17.	Function search(arr[])
+Step 18.	Initialize integers i, x, n = 0
+Step 19.	Print "Search: "
+Step 20.	Read x
+Step 21.	For i from 0 to top-1
+            i.	If arr[i] is equal to x
+            ii.	Print "Found x at i"
+            iii.	Increment n by 1
+            iv.	End If
+Step 22.	End For
+Step 23.	If n is equal to 0
+            i.	Print "Unsuccessful Search"
+Step 24.	End If
+Step 25.	End Function
+
+Step 26.	Function delete(arr[])
+Step 27.	Initialize integer s
+Step 28.	Label re:
+Step 29.	Print "Delete value at index: "
+Step 30.	Read s
+Step 31.	If top-1 is less than s
+            i.	Print "Enter a value lesser than top"
+            ii.	Go to label re
+Step 32.	Else
+            i.	For i from s to top-1
+            ii.	Set arr[i] to arr[i+1]
+            iii.	End For
+Step 33.	End If
+Step 34.	Decrement top by 1
+Step 35.	Return top
+Step 36.	End Function
+
+Step 37.	Function display(arr[])
+Step 38.	For i from 0 to top-1
+            i.	Print arr[i], " "
+Step 39.	End For
+Step 40.	End Function
+
+Step 41.	Function main()
+Step 42.	Initialize integer array arr[10], choice
+Step 43.	Print "Enter: "
+Step 44.	For i from 0 to 4
+            i.	Read arr[i]
+            ii.	Set top to arr[i]
+Step 45.	End For
+Step 46.	Label restart:
+Step 47.	Print "Press 1 to Insert an element"
+Step 48.	Print "Press 2 to Search an element"
+Step 49.	Print "Press 3 to Delete an element"
+Step 50.	Print "Press 4 to Display"
+Step 51.	Print "Press 5 to Exit"
+Step 52.	Print "Enter your choice: "
+Step 53.	Read choice
+Step 54.	Switch choice
+            i.	Case 1:
+            ii.	Call insert(arr)
+            iii.	Go to label restart
+            iv.	Case 2:
+            v.	Call search(arr)
+            vi.	Go to label restart
+            vii.	Case 3:
+            viii.	Call delete(arr)
+            ix.	Go to label restart
+            x.	Case 4:
+            xi.	Call display(arr)
+            xii.	Go to label restart
+            xiii.	Case 5:
+            xiv.	Print "Exit."
+            xv.	Exit
+            xvi.	Default:
+            xvii.	Print "Wrong Choice"
+            xviii.	Go to label restart
+Step 55.	End Switch
+Step 56.	End Function
