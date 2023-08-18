@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 void swapbyvalue(int x,int y)
 {
     int temp=0;
@@ -28,5 +29,6 @@ int main()
     printf("Swapping by Reference\n");
     printf("A: %d\n",a);
     printf("B: %d\n",b);
+    system("PAUSE");
     return 0;
 }

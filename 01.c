@@ -32,51 +32,67 @@ int insert(int arr[])
 void search(int arr[])
 {
     int i,x,n=0;
-    printf("\nSerach : ");
+    printf("\nSearch : ");
     scanf("%d",&x);
     for (int i = 0; i < top; i++)
     {
         if (arr[i]==x)
         {
-            printf("Found %d at %d\n",x,i);
+            printf("Found %d at index %d.\n",x,i);
             n++;
         }
     }
     if (n==0)
     {
-        printf("Unsuccesfull Search");
+        printf("Unsuccesful Search");
     }
     printf("\n");
 }
 int delete(int arr[])
 {
-    int s;
-    re:
-    printf("\nDelete value at index: ");
-    scanf("%d",&s);
-    if (top-1<s)
+    int s,del;
+    if (top==0)
     {
-        printf("Enter a value lesser than %d\n",top);
-        goto re;
+        printf("\nArray Underflow.\n");
+        return top;
     }
     else
     {
-        for (int i = s; i < top; i++)
+        re:
+        printf("\nDelete value at index: ");
+        scanf("%d",&s);
+        if (top-1<s)
         {
-            arr[i]=arr[i+1];
+            printf("Enter a value lesser than %d\n",top);
+            goto re;
         }
+        else
+        {
+            del=arr[s];
+            for (int i = s; i < top; i++)
+            {
+                arr[i]=arr[i+1];
+            }
+        }
+        printf("%d is deleted.\n",del);
+        return top=top-1;
     }
-    printf("\n");
-    return top=top-1;
 }
 void display(int arr[])
 {
-    printf("\n");
-    for (int i = 0; i < top; i++)
+    if (top==0)
     {
-        printf("%d ",arr[i]);
+        printf("\nArray is empty.\n");
     }
-    printf("\n");
+    else
+    {       
+        printf("\n");
+        for (int i = 0; i < top; i++)
+        {
+            printf("%d ",arr[i]);
+        }
+        printf("\n");
+    }
 }
 int main()
 {
@@ -100,26 +116,21 @@ int main()
     case 1:
         insert(arr);
         goto restart;
-        break;
     case 2 :
         search(arr);
         goto restart;
-        break;
     case 3:
         delete(arr);
         goto restart;
-        break;
     case 4:
         display(arr);
         goto restart;
-        break;
     case 5:
         printf("Exit.\n");
         break;
     default:
         printf("Wrong Choice\n");
         goto restart;
-        break;
     }
     system("PAUSE");
     return 0;

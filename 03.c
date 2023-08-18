@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int stack[5],top;
 void push()
 {
@@ -41,13 +42,14 @@ void peep()
 }
 void change ()
 {
+    int index;
     if (top==-1)
     {
         printf("Stack is empty.\n");
     }
     else
     {
-        printf("Enter new value for %d: ",top);
+        printf("Enter new value for index %d: ",top);
         scanf("%d",&stack[top]);
     }
 }
@@ -85,30 +87,25 @@ int main()
     case 1:
         push();
         goto restart;
-        break;
     case 2:
         pop();
         goto restart;
-        break;
     case 3:
         peep();
         goto restart;
-        break;
     case 4:
         change();
         goto restart;
-        break;
     case 5:
         display();
         goto restart;
-        break;
     case 6:
         printf("Exit.\n");
         break;
     default:
         printf("Wrong Choice\n");
         goto restart;
-        break;
     }
+    system("PAUSE");
     return 0;
 }

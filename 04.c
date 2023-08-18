@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <stdlib.h>
 char infix[10],postfix[10],stack[10];
 int top;
 void push(char op)
@@ -75,6 +76,7 @@ int main()
     puts(stack);
     printf("Infix: ");
     puts(infix);
+    system("PAUSE");
     return 0;
 }
 
