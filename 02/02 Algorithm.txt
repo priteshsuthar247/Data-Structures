@@ -1,0 +1,30 @@
+Step 1.	Function swapbyvalue(x, y)
+Step 2.	Initialize integer temp
+Step 3.	Set temp to x
+Step 4.	Set x to y
+Step 5.	Set y to temp
+Step 6.	End Function
+
+Step 7.	Function swapbyreference(x_pointer, y_pointer)
+Step 8.	Initialize integer temp
+Step 9.	Set temp to value at x_pointer
+Step 10.	Set value at x_pointer to value at y_pointer
+Step 11.	Set value at y_pointer to temp
+Step 12.	End Function
+
+Step 13.	Function main()
+Step 14.	Initialize integers a, b
+Step 15.	Print "A: "
+Step 16.	Read a
+Step 17.	Print "B: "
+Step 18.	Read b
+Step 19.	Call swapbyvalue(a, b)
+Step 20.	Print "Swapping by value"
+Step 21.	Print "A: ", a
+Step 22.	Print "B: ", b
+Step 23.	Call swapbyreference(address of a, address of b)
+Step 24.	Print "Swapping by Reference"
+Step 25.	Print "A: ", a
+Step 26.	Print "B: ", b
+Step 27.	End
+Step 28.	End Function
