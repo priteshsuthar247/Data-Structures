@@ -1,0 +1,97 @@
+Step 1.	Declare stack[5] as an array of integers
+Step 2.	Declare top as an integer
+
+Step 3.	Function push()
+        i.	If top equals 4
+        ii.	Display "Stack overflow."
+        iii.	Else
+        iv.	Increment top by 1
+        v.	Display "Enter digit: "
+        vi.	Input stack[top]
+        vii.	Display "Remaining entries left : " concatenated with (4 - top)
+        viii.	End If
+Step 4.	End Function
+
+Step 5.	Function pop()
+        i.	If top equals -1
+        ii.	Display "Stack underflow."
+        iii.	Else
+        iv.	Display a newline character
+        v.	Display stack[top] concatenated with " is popped."
+        vi.	Set stack[top] to 0
+        vii.	Decrement top by 1
+        viii.	Display "Remaining elements in stack : " concatenated with (top + 1)
+        ix.	End If
+Step 6.	End Function
+
+Step 7.	Function peep()
+        i.	If top equals -1
+        ii.	Display "Stack is empty."
+        iii.	Else
+        iv.	Display a newline character
+        v.	Display stack[top] concatenated with " is on top of the stack at index " concatenated with top
+        vi.	End If
+Step 8.	End Function
+
+Step 9.	Function change()
+        i.	Declare index as an integer
+        ii.	If top equals -1
+        iii.	Display "Stack is empty."
+        iv.	Else
+        v.	Display "Enter new value for index " concatenated with top concatenated with ": "
+        vi.	Input stack[top]
+        vii.	End If
+Step 10.	End Function
+
+Step 11.	Function display()
+            i.	If top equals -1
+            ii.	Display "Stack is empty."
+            iii.	Else
+            iv.	For i from 0 to top
+                1.	Display stack[i] followed by a space
+            v.	End For
+            vi.	Display a newline character
+            vii.	End If
+Step 12.	End Function
+
+Step 13.	Function Main()
+            i.	Declare choice as an integer
+            ii.	Set top to -1
+            iii.	Loop:
+            iv.	Display a newline character
+            v.	Display "Press 1 to Push"
+            vi.	Display "Press 2 to Pop"
+            vii.	Display "Press 3 to Peep"
+            viii.	Display "Press 4 to Change"
+            ix.	Display "Press 5 to Display"
+            x.	Display "Press 6 to Exit"
+            xi.	Display a newline character
+            xii.	Display "Enter your choice: "
+            xiii.	Input choice
+            xiv.	Display a newline character
+            xv.	Switch choice
+                1.	Case 1:
+                    a.	Call push()
+                    b.	Goto Loop
+                2.	Case 2:
+                    a.	Call pop()
+                    b.	Goto Loop
+                3.	Case 3:
+                    a.	Call peep()
+                    b.	Goto Loop
+                4.	Case 4:
+                    a.	Call change()
+                    b.	Goto Loop
+                5.	Case 5:
+                    a.	Call display()
+                    b.	Goto Loop
+                6.	Case 6:
+                    a.	Display "Exit."
+                    b.	Break
+                7.	Default:
+                    a.	Display "Wrong Choice"
+                    b.	Goto Loop
+            xvi.	End Switch
+            xvii.	Call system("PAUSE")
+            xviii.	Return 0
+Step 14.	End Function
