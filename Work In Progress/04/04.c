@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include <stdlib.h>
-char infix[10],postfix[10],stack[10];
+char infix[50],postfix[50],stack[50];
 int top;
 void push(char op)
 {
@@ -16,22 +16,25 @@ char pop(char op)
 }
 int operator(char op)
 {
-    if(op =='+' || op =='-' || op =='*' || op =='/') 
+    if(op =='+' || op =='-' || op =='*' || op =='/' || op =='^')
         return 1;
     else
         return 0;
 }
 int precedence(char op)
 {
-    if(op == '*' || op=='/')
+    if (op == '^')
         return 3;
+    else if(op == '*' || op=='/')
+        return 2;
     else if(op == '+' || op=='-')
-        return 2; 
+        return 1; 
     else
         return 0;
 }
 void conversion()
 {
+    char op;
     int i=0;
     int j=0;
     while (infix[i]!='\0')
@@ -44,7 +47,12 @@ void conversion()
         }
         else
         {
-            if (precedence(infix[i])>precedence(stack[top]))
+            if (infix[i] == '^' && stack[top]=='^')
+            {
+                push(infix[i]);
+                i++;
+            }
+            else if (precedence(infix[i])>precedence(stack[top]))
             {
                 push(infix[i]);
                 i++;
@@ -69,13 +77,7 @@ int main()
     printf("Enter Infix expression: ");
     gets(infix);
     conversion();
-    printf("Final: \n");
-    printf("Postfix: ");
-    puts(postfix);
-    printf("Stack: ");
-    puts(stack);
-    printf("Infix: ");
-    puts(infix);
+    printf("Postfix: %s\n",postfix);
     system("PAUSE");
     return 0;
 }
