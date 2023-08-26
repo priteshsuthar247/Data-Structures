@@ -1,0 +1,56 @@
+Step 1. Declare global variables `infix[50]` to hold the input infix expression, `postfix[50]` to hold the converted postfix expression, `stack[50]` to hold operators temporarily, and `top` to keep track of the top of the stack.
+
+Step 2. Define a function `push`:
+   - Accept a parameter `op` (operator).
+   - Increment `top`.
+   - Assign `op` to `stack[top]`.
+
+Step 3. Define a function `pop`:
+   - Accept a parameter `op` (operator).
+   - Assign `stack[top]` to `op`.
+   - Decrement `top`.
+   - Return `op`.
+
+Step 4. Define a function `operator`:
+   - Accept a parameter `op` (operator).
+   - Check if `op` is '+' or '-' or '*' or '/' or '^':
+     - If true, return 1.
+     - Otherwise, return 0.
+
+Step 5. Define a function `precedence`:
+   - Accept a parameter `op` (operator).
+   - Check the precedence of `op`:
+     - If `op` is '^', return 3.
+     - If `op` is '*' or '/', return 2.
+     - If `op` is '+' or '-', return 1.
+     - Otherwise, return 0.
+
+Step 6. Define a function `conversion`:
+   - Declare variables `op`, `i`, and `j` and initialize `i` and `j` to 0.
+   - Loop while `infix[i]` is not the null character:
+     - If `infix[i]` is not an operator:
+       - Assign `infix[i]` to `postfix[j]`.
+       - Increment `i` and `j`.
+     - Otherwise:
+       - Check if `infix[i]` is '^' and `stack[top]` is '^':
+         - Push `infix[i]` onto the stack.
+         - Increment `i`.
+       - Else if the precedence of `infix[i]` is greater than the precedence of `stack[top]`:
+         - Push `infix[i]` onto the stack.
+         - Increment `i`.
+       - Else:
+         - Pop `stack[top]` and assign it to `postfix[j]`.
+         - Increment `j`.
+   - While `top` is not -1:
+     - Pop `stack[top]` and assign it to `postfix[j]`.
+     - Increment `j`.
+   - Assign the null character to `postfix[j]`.
+
+Step 7. Define the `main` function:
+   - Initialize `top` to -1.
+   - Print "Enter Infix expression: ".
+   - Read the infix expression into `infix`.
+   - Call the `conversion` function to convert the infix expression to postfix.
+   - Print the converted postfix expression.
+   - Pause program execution using `system("PAUSE")`.
+   - Return 0 to indicate successful execution.
