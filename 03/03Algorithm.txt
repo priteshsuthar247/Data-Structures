@@ -1,97 +1,53 @@
-Step 1.	Declare stack[5] as an array of integers
-Step 2.	Declare top as an integer
+Step 1. Declare global variables `stack[5]` to hold the stack elements and `top` to keep track of the top element's index.
 
-Step 3.	Function push()
-        i.	If top equals 4
-        ii.	Display "Stack overflow."
-        iii.	Else
-        iv.	Increment top by 1
-        v.	Display "Enter digit: "
-        vi.	Input stack[top]
-        vii.	Display "Remaining entries left : " concatenated with (4 - top)
-        viii.	End If
-Step 4.	End Function
+Step 2. Define a function `push`:
+   - Check if `top` is 4 (stack is full):
+     - If true, display "Stack overflow."
+     - Otherwise, increment `top`.
+     - Display "Enter digit: " and read an integer into `stack[top]`.
+     - Display "Remaining entries left: ".
+   
+Step 3. Define a function `pop`:
+   - Check if `top` is -1 (stack is empty):
+     - If true, display "Stack underflow."
+     - Otherwise:
+     - Display the value that's popped from the stack.
+     - Set the current top element to 0.
+     - Decrement `top`.
+     - Display "Remaining elements in stack: ".
 
-Step 5.	Function pop()
-        i.	If top equals -1
-        ii.	Display "Stack underflow."
-        iii.	Else
-        iv.	Display a newline character
-        v.	Display stack[top] concatenated with " is popped."
-        vi.	Set stack[top] to 0
-        vii.	Decrement top by 1
-        viii.	Display "Remaining elements in stack : " concatenated with (top + 1)
-        ix.	End If
-Step 6.	End Function
+Step 4. Define a function `peep`:
+   - Check if `top` is -1 (stack is empty):
+     - If true, display "Stack is empty."
+     - Otherwise, display the value on top of the stack at index `top`.
 
-Step 7.	Function peep()
-        i.	If top equals -1
-        ii.	Display "Stack is empty."
-        iii.	Else
-        iv.	Display a newline character
-        v.	Display stack[top] concatenated with " is on top of the stack at index " concatenated with top
-        vi.	End If
-Step 8.	End Function
+Step 5. Define a function `change`:
+   - Check if `top` is -1 (stack is empty):
+     - If true, display "Stack is empty."
+     - Otherwise:
+     - Display "Enter new value for index top: ".
+     - Read an integer into `stack[top]`.
 
-Step 9.	Function change()
-        i.	Declare index as an integer
-        ii.	If top equals -1
-        iii.	Display "Stack is empty."
-        iv.	Else
-        v.	Display "Enter new value for index " concatenated with top concatenated with ": "
-        vi.	Input stack[top]
-        vii.	End If
-Step 10.	End Function
+Step 6. Define a function `display`:
+   - Check if `top` is -1 (stack is empty):
+     - If true, display "Stack is empty."
+     - Otherwise:
+     - Loop from 0 to `top` using variable `i`:
+       - Display `stack[i]` followed by a space.
+     - Display a newline character.
 
-Step 11.	Function display()
-            i.	If top equals -1
-            ii.	Display "Stack is empty."
-            iii.	Else
-            iv.	For i from 0 to top
-                1.	Display stack[i] followed by a space
-            v.	End For
-            vi.	Display a newline character
-            vii.	End If
-Step 12.	End Function
+Step 7. Define a function `menu`:
+   - Declare a local variable `choice`.
+   - Label: `restart`
+   - Display the menu options for push, pop, peep, change, display, and exit.
+   - Read the user's choice into `choice`.
+   - Use a `switch` statement to handle different cases:
+     - For each case, call the corresponding function and go to label `restart` to show the menu again.
+     - For the exit case, display "Exit." and break the loop.
+     - For the default case, display "Wrong Choice" and go to label `restart`.
 
-Step 13.	Function Main()
-            i.	Declare choice as an integer
-            ii.	Set top to -1
-            iii.	Loop:
-            iv.	Display a newline character
-            v.	Display "Press 1 to Push"
-            vi.	Display "Press 2 to Pop"
-            vii.	Display "Press 3 to Peep"
-            viii.	Display "Press 4 to Change"
-            ix.	Display "Press 5 to Display"
-            x.	Display "Press 6 to Exit"
-            xi.	Display a newline character
-            xii.	Display "Enter your choice: "
-            xiii.	Input choice
-            xiv.	Display a newline character
-            xv.	Switch choice
-                1.	Case 1:
-                    a.	Call push()
-                    b.	Goto Loop
-                2.	Case 2:
-                    a.	Call pop()
-                    b.	Goto Loop
-                3.	Case 3:
-                    a.	Call peep()
-                    b.	Goto Loop
-                4.	Case 4:
-                    a.	Call change()
-                    b.	Goto Loop
-                5.	Case 5:
-                    a.	Call display()
-                    b.	Goto Loop
-                6.	Case 6:
-                    a.	Display "Exit."
-                    b.	Break
-                7.	Default:
-                    a.	Display "Wrong Choice"
-                    b.	Goto Loop
-            xvi.	End Switch
-            xvii.	Call system("PAUSE")
-            xviii.	Return 0
-Step 14.	End Function
+Step 8. Define the `main` function:
+   - Initialize `top` to -1.
+   - Call the `menu` function to display the menu and perform operations.
+   - Pause program execution using `system("PAUSE")`.
+   - Return 0 to indicate successful execution.
