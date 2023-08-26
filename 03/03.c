@@ -42,7 +42,6 @@ void peep()
 }
 void change ()
 {
-    int index;
     if (top==-1)
     {
         printf("Stack is empty.\n");
