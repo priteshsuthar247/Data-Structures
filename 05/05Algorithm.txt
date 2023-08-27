@@ -1,0 +1,68 @@
+Step 1. Declare global variables for simple queue: squeue[10], sfront, and srear.
+
+Step 2. Declare global variables for circular queue: cqueue[10], cfront, and crear.
+
+Step 3. Define the senqueue() function:
+  - Check if srear is equal to 4, print "Queue Overflow."
+  - Check if both sfront and srear are -1:
+    - Read an integer temp.
+    - Increment both sfront and srear.
+    - Assign temp to squeue[sfront] and squeue[srear].
+  - Otherwise, read an integer and store it in squeue[srear].
+
+Step 4. Define the sdequeue() function:
+  - Check if sfront is -1, print "Queue Underflow."
+  - Check if sfront is equal to srear:
+    - Print the dequeued element squeue[sfront].
+    - Reset sfront and srear to -1.
+  - Otherwise, print the dequeued element squeue[sfront] and increment sfront.
+
+Step 5. Define the sdisplay() function:
+  - Check if both sfront and srear are -1, print "Queue is empty."
+  - Otherwise, use a loop to iterate from sfront to srear and print each element.
+
+Step 6. Define the smenu() function:
+  - Read the user's choice.
+  - Use a switch statement to handle different cases:
+    - Call the corresponding functions based on the user's choice.
+
+Step 7. Define the sinitialize() function:
+  - Initialize sfront and srear to -1.
+  - Call the smenu() function.
+
+Step 8. Define the cenqueue() function:
+  - Check if (crear+1)%5 is equal to cfront, print "Queue Overflow."
+  - Check if both cfront and crear are -1:
+    - Read an integer temp.
+    - Update cfront and crear using modulo operation.
+    - Assign temp to cqueue[cfront] and cqueue[crear].
+  - Otherwise, read an integer and store it in cqueue[crear].
+
+Step 9. Define the cdequeue() function:
+  - Check if cfront is -1, print "Queue Underflow."
+  - Check if cfront is equal to crear:
+    - Print the dequeued element cqueue[cfront].
+    - Reset cfront and crear to -1.
+  - Otherwise, print the dequeued element cqueue[cfront] and increment cfront using modulo operation.
+
+Step 10. Define the cdisplay() function:
+  - Check if both cfront and crear are -1, print "Queue is empty."
+  - Otherwise, use a do-while loop with modulo operations to iterate and print circular queue elements.
+
+Step 11. Define the cmenu() function:
+  - Read the user's choice.
+  - Use a switch statement to handle different cases:
+    - Call the corresponding functions based on the user's choice.
+
+Step 12. Define the cinitialize() function:
+  - Initialize cfront and crear to -1.
+  - Call the cmenu() function.
+
+Step 13. Define the mainmenu() function:
+  - Read the user's choice.
+  - Use a switch statement to handle different cases:
+    - Call the corresponding functions based on the user's choice.
+
+Step 14. Define the main() function:
+  - Call the mainmenu() function.
+  - Use system("PAUSE") to pause execution before returning 0.
