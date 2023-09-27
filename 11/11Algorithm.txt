@@ -1,0 +1,24 @@
+1. Declare an integer array a[5] to store values.
+2. Declare integers low, mid, high, and search to store search-related values.
+3. Print "Enter: ".
+4. For i from 0 to 4:
+    a. Read an integer and store it in a[i].
+5. For i from 0 to 4:
+    a. For j from 0 to 4:
+        i. Swap a[i] and a[j] if a[i] is greater than a[j].
+
+6. Print "Search: ".
+7. Read the integer value to be searched and store it in the variable 'search'.
+8. Initialize 'low' to 0 and 'high' to 4.
+
+9. While 'low' is less than or equal to 'high', repeat the following steps:
+    a. Calculate 'mid' as (low + high) / 2.
+    b. If a[mid] is equal to 'search':
+        i. Print "Found: " followed by a[mid].
+    c. If a[mid] is less than 'search':
+        i. Update 'low' to mid + 1.
+    d. Otherwise (a[mid] is greater than 'search'):
+        i. Update 'high' to mid - 1.
+
+10. Print "Exit."
+11. End of the algorithm.
