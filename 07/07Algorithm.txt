@@ -1,0 +1,69 @@
+Structure Definition:
+1. Define a structure Node with integer data, a pointer to the previous Node (prev), and a pointer to the next Node (next).
+
+Node Creation:
+2. Create a function createNode(data) that takes an integer data as input and returns a new Node:
+   a. Allocate memory for a new Node.
+   b. Set the data of the new Node to the given data.
+   c. Set the prev and next pointers of the new Node to NULL.
+   d. Return the new Node.
+
+Insertion at the Front:
+3. Create a function insertAtFront(head, data) that takes a pointer to the head of the linked list and an integer data as input:
+   a. Create a new Node newNode using the createNode function with the given data.
+   b. If the linked list is empty (head is NULL):
+      i. Set the head to newNode.
+   c. If the linked list is not empty:
+      i. Set newNode's next pointer to the current head.
+      ii. Set the previous pointer of the current head to newNode.
+      iii. Update the head pointer to point to newNode.
+
+Insertion at the End:
+4. Create a function insertAtEnd(head, data) that takes a pointer to the head of the linked list and an integer data as input:
+   a. Create a new Node newNode using the createNode function with the given data.
+   b. If the linked list is empty (head is NULL):
+      i. Set the head to newNode.
+   c. If the linked list is not empty:
+      i. Traverse the linked list to find the last Node.
+      ii. Set newNode's previous pointer to the last Node.
+      iii. Set the next pointer of the last Node to newNode.
+
+Deletion of the Last Node:
+5. Create a function deleteLastNode(head) that takes a pointer to the head of the linked list as input:
+   a. If the linked list is empty (head is NULL), return.
+   b. Traverse the linked list to find the last Node.
+   c. If the last Node has a previous Node (i.e., it's not the only Node):
+      i. Update the next pointer of the previous Node to NULL.
+   d. If the last Node is the only Node (head is the last Node):
+      i. Set the head to NULL.
+   e. Free the memory of the last Node.
+
+Deletion Before a Specified Position:
+6. Create a function deleteBeforePosition(head, position) that takes a pointer to the head of the linked list and a position as input:
+   a. If the linked list is empty or the position is less than or equal to 2, return.
+   b. Traverse the linked list to find the Node before the specified position (position - 1):
+      i. Stop traversal if the next Node is NULL.
+   c. Store the address of the Node to be deleted in a temporary pointer temp.
+   d. Update the next pointer of the previous Node to skip the Node to be deleted.
+   e. If the Node to be deleted has a next Node, update the previous pointer of the next Node.
+   f. Free the memory of the Node pointed to by temp.
+
+Displaying the Doubly Linked List:
+7. Create a function display(head) that takes a pointer to the head of the linked list as input:
+   a. Initialize a pointer current to the head.
+   b. Loop while current is not NULL:
+      i. Print the data of the current Node.
+      ii. Move current to the next Node.
+   c. Print "NULL" to indicate the end of the linked list.
+
+Menu-Driven Program:
+8. Create a menu-driven function menu() to interact with the user:
+   a. Initialize a pointer head to NULL.
+   b. Display a menu with options to insert at front, insert at end, delete last Node, delete before specified position, display doubly linked list, and quit.
+   c. Read the user's choice.
+   d. Based on the choice, call the corresponding function and repeat the menu until the user chooses to quit.
+
+Main Function:
+9. In the main function, call the menu() function to start the program.
+
+End of Algorithm.
