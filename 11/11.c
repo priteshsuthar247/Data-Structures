@@ -12,10 +12,14 @@ int main()
     {
         for (int j = 0; j < 5; j++)
         {
-            int temp;
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            if (a[i]<a[j])
+            {
+                int temp;
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+            
         }
     }
     printf("Search: ");
