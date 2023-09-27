@@ -1,0 +1,65 @@
+Structure Definition:
+1. Define a structure Node with integer data and a pointer to the next Node (next).
+
+Node Creation:
+2. Create a function createNode(data) that takes an integer data as input and returns a new Node:
+   a. Allocate memory for a new Node.
+   b. Set the data of the new Node to the given data.
+   c. Set the next pointer of the new Node to NULL.
+   d. Return the new Node.
+
+Insertion at the End:
+3. Create a function insertAtEnd(head, data) that takes a pointer to the head of the circular linked list and an integer data as input:
+   a. Create a new Node newNode using the createNode function with the given data.
+   b. If the linked list is empty (head is NULL):
+      i. Set newNode's next pointer to newNode itself.
+      ii. Set the head to newNode.
+   c. If the linked list is not empty:
+      i. Traverse the linked list to find the last Node (where next points to head).
+      ii. Set newNode's next pointer to head.
+      iii. Set the next pointer of the last Node to newNode.
+
+Insertion Before a Specified Position:
+4. Create a function insertBeforePosition(head, data, position) that takes a pointer to the head of the circular linked list, an integer data, and a position as input:
+   a. If the linked list is empty or the position is less than or equal to 1, insert at the end by calling insertAtEnd(head, data).
+   b. Create a new Node newNode using the createNode function with the given data.
+   c. Traverse the linked list to find the Node before the specified position (position - 1).
+   d. Set newNode's next pointer to the Node at the specified position.
+   e. Update the next pointer of the previous Node to point to newNode.
+
+Deletion of the First Node:
+5. Create a function deleteFirstNode(head) that takes a pointer to the head of the circular linked list as input:
+   a. If the linked list is empty (head is NULL), return.
+   b. Traverse the linked list to find the last Node (where next points to head).
+   c. If the last Node is the only Node (circular linked list with one Node), set head to NULL.
+   d. If there are more than one Node, update the next pointer of the last Node to the second Node.
+   e. Free the memory of the first Node.
+
+Deletion After a Specified Position:
+6. Create a function deleteAfterPosition(head, position) that takes a pointer to the head of the circular linked list and a position as input:
+   a. If the linked list is empty or the position is less than or equal to 0, return.
+   b. Traverse the linked list to find the Node at the specified position.
+   c. Store the address of the Node to be deleted in a temporary pointer temp.
+   d. Update the next pointer of the previous Node to skip the Node to be deleted.
+   e. Free the memory of the Node pointed to by temp.
+
+Displaying the Circular Linked List:
+7. Create a function display(head) that takes a pointer to the head of the circular linked list as input:
+   a. If the linked list is empty (head is NULL), return.
+   b. Initialize a pointer current to the head.
+   c. Loop until the end of the circular linked list is reached (current is back to head):
+      i. Print the data of the current Node.
+      ii. Move current to the next Node.
+   d. Print "... (circular)" to indicate the circular nature of the linked list.
+
+Menu-Driven Program:
+8. Create a menu-driven function menu() to interact with the user:
+   a. Initialize a pointer head to NULL.
+   b. Display a menu with options to insert at end, insert before specified position, delete first Node, delete after specified position, display circular linked list, and quit.
+   c. Read the user's choice.
+   d. Based on the choice, call the corresponding function and repeat the menu until the user chooses to quit.
+
+Main Function:
+9. In the main function, call the menu() function to start the program.
+
+End of Algorithm.
