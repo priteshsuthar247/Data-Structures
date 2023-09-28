@@ -1,0 +1,46 @@
+1. Structure Definition:
+   - Define a structure `TreeNode` with integer data, left child pointer, and right child pointer.
+
+2. Node Creation Function:
+   - Create a function `createNode(data)` that takes an integer `data` as input.
+   - Allocate memory for a new node (`newNode`) and initialize its data, left, and right pointers.
+   - Return the `newNode`.
+
+3. Insertion Function:
+   - Create a function `insert(root, data)` that takes a pointer to the root node `root` and an integer `data` as input.
+   - Check if the `root` is `NULL`. If it is, create a new node with the given data and return it.
+   - If the `data` is less than the `root`'s data, recursively call `insert` on the left subtree.
+   - If the `data` is greater than the `root`'s data, recursively call `insert` on the right subtree.
+   - Return the updated `root` node.
+
+4. In-order Traversal Function:
+   - Create a function `inorderTraversal(root)` that takes a pointer to the root node `root` as input.
+   - If the `root` is `NULL`, return.
+   - Recursively call `inorderTraversal` on the left subtree.
+   - Print the data of the current `root` node.
+   - Recursively call `inorderTraversal` on the right subtree.
+
+5. Pre-order Traversal Function:
+   - Create a function `preorderTraversal(root)` that takes a pointer to the root node `root` as input.
+   - If the `root` is `NULL`, return.
+   - Print the data of the current `root` node.
+   - Recursively call `preorderTraversal` on the left subtree.
+   - Recursively call `preorderTraversal` on the right subtree.
+
+6. Post-order Traversal Function:
+   - Create a function `postorderTraversal(root)` that takes a pointer to the root node `root` as input.
+   - If the `root` is `NULL`, return.
+   - Recursively call `postorderTraversal` on the left subtree.
+   - Recursively call `postorderTraversal` on the right subtree.
+   - Print the data of the current `root` node.
+
+7. Main Function:
+   - Initialize a pointer `root` to `NULL`.
+   - Create a loop with a menu-driven interface:
+     - Display options for inserting a node, in-order traversal, pre-order traversal, post-order traversal, and exit.
+     - Based on the user's choice, execute the corresponding function.
+     - For insertion, prompt the user for data and update the `root`.
+     - For traversals, call the respective traversal functions on the `root`.
+     - Repeat the loop until the user chooses to exit.
+
+This algorithm describes the structure and logic of the provided C program for creating a binary search tree and performing tree traversals interactively through a menu-driven interface.
