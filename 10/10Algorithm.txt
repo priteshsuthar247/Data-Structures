@@ -1,0 +1,55 @@
+1. Start
+
+2. Declare an integer array `arr` to store 5 integers and an integer variable `choice`.
+
+3. Display Function
+   - Input: `arr` (an array of integers)
+   - Output: None
+   - Iterate through the elements of `arr` and display them as a sorted list.
+
+4. Bubble Sort Function (bsort)
+   - Input: `barr` (an array of integers)
+   - Output: None
+   - Implement the Bubble Sort algorithm to sort the elements in `barr` in ascending order.
+
+5. Merge Function (merge)
+   - Input: `marr` (an array of integers), `mid` (middle index), `low` (low index), `high` (high index)
+   - Output: None
+   - Create a temporary array `temp` to store merged elements.
+   - Initialize `i`, `j`, and `k` to `low`, `mid + 1`, and `low` respectively.
+   - Merge the subarrays `marr[low...mid]` and `marr[mid+1...high]` into `temp` in ascending order.
+   - Copy the sorted elements from `temp` back to `marr`.
+
+6. Merge Sort Function (msort)
+   - Input: `marr` (an array of integers), `low` (low index), `high` (high index)
+   - Output: None
+   - If `low` is less than `high`, calculate the middle index `mid`.
+   - Recursively call `msort` on the left and right halves of the array, i.e., `msort(marr, low, mid)` and `msort(marr, mid+1, high)`.
+   - Merge the two sorted halves using the `merge` function.
+
+7. Partition Function for Quick Sort (partition)
+   - Input: `qarr` (an array of integers), `low` (low index), `high` (high index)
+   - Output: The partition index
+   - Choose a pivot element (usually the first element) from `qarr`.
+   - Initialize `i` to `low + 1` and `j` to `high`.
+   - Use a loop to partition the array into elements less than and greater than the pivot.
+   - Swap elements when necessary until `i` is greater than `j`.
+   - Swap the pivot with the element at index `j`.
+   - Return the partition index `j`.
+
+8. Quick Sort Function (qusort)
+   - Input: `qarr` (an array of integers), `low` (low index), `high` (high index)
+   - Output: None
+   - If `low` is less than `high`, obtain the partition index using the `partition` function.
+   - Recursively call `qusort` on the left and right subarrays, i.e., `qusort(qarr, low, partitionIndex - 1)` and `qusort(qarr, partitionIndex + 1, high)`.
+
+9. Main Function
+   - Initialize the `arr` array by taking input from the user.
+   - Use a loop with a menu to select the sorting algorithm:
+     - If `choice` is 1, perform Bubble Sort using `bsort` and display the sorted array.
+     - If `choice` is 2, perform Merge Sort using `msort` and display the sorted array.
+     - If `choice` is 3, perform Quick Sort using `qusort` and display the sorted array.
+     - If `choice` is 4, exit the program.
+     - If `choice` is invalid, display a message and repeat the menu.
+   
+10. End
